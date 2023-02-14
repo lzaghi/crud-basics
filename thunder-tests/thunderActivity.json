@@ -8,9 +8,14 @@
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-13T18:58:10.147Z",
-    "modified": "2023-02-13T18:58:10.147Z",
+    "modified": "2023-02-14T13:43:18.512Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"teste\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
@@ -53,6 +58,44 @@
     "modified": "2023-02-13T20:03:14.683Z",
     "headers": [],
     "params": [],
+    "tests": []
+  },
+  {
+    "_id": "99df8ed7-0555-40a8-93cd-411f4cec28f9",
+    "colId": "history",
+    "containerId": "",
+    "name": "https://www.thunderclient.com/welcome",
+    "url": "https://www.thunderclient.com/welcome",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-14T13:41:41.013Z",
+    "modified": "2023-02-14T13:41:41.013Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"teste\"\n}",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "de49878c-50ed-473f-9ed8-96aa29a6c477",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/products",
+    "url": "http://localhost:3000/products",
+    "method": "POST",
+    "sortNum": 0,
+    "created": "2023-02-14T13:42:14.932Z",
+    "modified": "2023-02-14T13:42:14.932Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"teste\"\n}",
+      "form": []
+    },
     "tests": []
   }
 ]
