@@ -51,13 +51,18 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products/10",
-    "url": "http://localhost:3000/sales/10",
-    "method": "GET",
+    "url": "http://localhost:3000/products/1",
+    "method": "PUT",
     "sortNum": 0,
     "created": "2023-02-13T20:03:14.683Z",
-    "modified": "2023-02-14T21:00:55.462Z",
+    "modified": "2023-02-14T21:53:24.078Z",
     "headers": [],
     "params": [],
+    "body": {
+      "type": "json",
+      "raw": "{\n  \"name\": \"dadin\"\n}",
+      "form": []
+    },
     "tests": []
   },
   {
