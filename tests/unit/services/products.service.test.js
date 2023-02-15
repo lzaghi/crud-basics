@@ -3,6 +3,7 @@ const sinon = require("sinon");
 
 const { productsModel } = require("../../../src/models");
 const { productsService } = require("../../../src/services");
+const { newProduct } = require("../models/mocks/products.model.mock");
 
 const { productsList } = require("./mocks/products.service.mock");
 
@@ -48,6 +49,28 @@ describe('Testes de unidade productsService', function () {
 
     expect(result.type).to.be.equal('PRODUCT_NOT_FOUND')
     expect(result.message).to.be.deep.equal('Product not found');
+  });
+
+  it('Cadastro válido de produto retorna o novo produto', async function () {
+    sinon.stub(productsModel, 'insertProduct').resolves(1);
+    sinon.stub(productsModel, 'getById').resolves(productsList[0]);
+
+    const result = await productsService.insertProduct(newProduct);
+
+    expect(result.type).to.equal(null);
+    expect(result.message).to.deep.equal({
+      "id": 1,
+      "name": "Martelo de Thor"
+    });
+  });
+
+  it('Cadastro inválido de nome de produto retorna erro', async function () {
+    const result = await productsService.insertProduct({
+      "name": "Mar"
+    })
+
+    expect(result.type).to.equal('INVALID_VALUE');
+    expect(result.message).to.equal('"name" length must be at least 5 characters long');
   });
 
   afterEach(function () {

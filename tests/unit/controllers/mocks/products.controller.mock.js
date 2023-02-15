@@ -13,6 +13,11 @@ const productsListMock = [
   }
 ];
 
+const newProductMock = {
+  "name": "Bermuda do Hulk",
+}
+
 module.exports = {
   productsListMock,
+  newProductMock,
 };
