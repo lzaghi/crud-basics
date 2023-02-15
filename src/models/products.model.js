@@ -38,10 +38,10 @@ const updateProduct = async (product, id) => {
   return insertId;
 };
 
-const deleteProduct = async (id) => {
+const deleteProduct = async (productId) => {
   await connection.execute(
     'DELETE FROM StoreManager.products WHERE id = (?)',
-    [id],
+    [productId],
   );
 };
 
