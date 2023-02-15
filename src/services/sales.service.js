@@ -1,9 +1,14 @@
 const { salesModel, productsModel } = require('../models');
 
-const insertSale = async (sales) => {
+const checksProduct = async (sales) => {
   const productIds = await productsModel.getProductIds();
   const productIdsArray = productIds.map((el) => el.id);
   const noProductId = sales.some((sale) => !productIdsArray.includes(sale.productId));
+  return noProductId;
+};
+
+const insertSale = async (sales) => {
+  const noProductId = await checksProduct(sales);
   if (noProductId) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 
   const newSaleId = await salesModel.insertSale();
@@ -38,9 +43,7 @@ const deleteSale = async (saleId) => {
 };
 
 const updateSale = async (sales, saleId) => {
-  const productIds = await productsModel.getProductIds();
-  const productIdsArray = productIds.map((el) => el.id);
-  const noProductId = sales.some((sale) => !productIdsArray.includes(sale.productId));
+  const noProductId = await checksProduct(sales);
   if (noProductId) return { type: 'PRODUCT_NOT_FOUND', message: 'Product not found' };
 
   const registeredSale = await salesModel.getById(saleId);
