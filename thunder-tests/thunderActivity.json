@@ -121,5 +121,43 @@
       "form": []
     },
     "tests": []
+  },
+  {
+    "_id": "3b8ae1a5-c82a-4f1c-85ea-d00a5b08e62e",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/1",
+    "url": "http://localhost:3000/sales/1",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-02-15T14:10:21.722Z",
+    "modified": "2023-02-15T14:10:21.722Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 10\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 50\n  }\n]",
+      "form": []
+    },
+    "tests": []
+  },
+  {
+    "_id": "e816d00a-89d3-45c7-8d5e-a9bc81091f52",
+    "colId": "history",
+    "containerId": "",
+    "name": "http://localhost:3000/sales/10",
+    "url": "http://localhost:3000/sales/10",
+    "method": "PUT",
+    "sortNum": 0,
+    "created": "2023-02-15T14:24:10.518Z",
+    "modified": "2023-02-15T14:24:10.518Z",
+    "headers": [],
+    "params": [],
+    "body": {
+      "type": "json",
+      "raw": "[\n  {\n    \"productId\": 1,\n    \"quantity\": 10\n  },\n  {\n    \"productId\": 2,\n    \"quantity\": 50\n  }\n]",
+      "form": []
+    },
+    "tests": []
   }
 ]
