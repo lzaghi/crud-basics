@@ -73,6 +73,19 @@ describe('Testes de unidade productsService', function () {
     expect(result.message).to.equal('"name" length must be at least 5 characters long');
   });
 
+  it('Atualização válida de produto retorna o novo produto', async function () {
+    sinon.stub(productsModel, 'updateProduct').resolves(1);
+    sinon.stub(productsModel, 'getById').resolves(productsList[0]);
+
+    const result = await productsService.updateProduct(newProduct);
+
+    expect(result.type).to.equal(null);
+    expect(result.message).to.deep.equal({
+      "id": 1,
+      "name": "Martelo de Thor"
+    });
+  });
+
   afterEach(function () {
     sinon.restore();
   });

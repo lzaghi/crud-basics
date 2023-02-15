@@ -120,6 +120,28 @@ describe('Testes de unidade productsController', function () {
     expect(res.json).to.have.been.calledWith({ message: '"name" length must be at least 5 characters long' });
   });
 
+  it('Atualização válida de produto retorna novo produto com 200', async function () {
+    const res = {};
+    const req = {
+      body: newProductMock,
+      params: { id: 1},
+    }
+
+    res.status = sinon.stub().returns(res);
+    res.json = sinon.stub().returns();
+    
+    sinon
+      .stub(productsService, 'updateProduct')
+      .resolves({ type: null, message : { id: 1, ...newProductMock }})
+    await productsController.updateProduct(req, res);
+
+    expect(res.status).to.have.been.calledWith(200);
+    expect(res.json).to.have.been.calledWith({
+      "id": 1,
+      "name": "Bermuda do Hulk",
+    });
+  });
+
   afterEach(function () {
     sinon.restore();
   });
