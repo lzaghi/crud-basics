@@ -3,7 +3,7 @@ const errorMap = require('../utils/errorMap');
 
 const getAll = async (_req, res) => {
   const { message } = await productsService.getAll();
-  res.status(200).json(message);
+  return res.status(200).json(message);
 };
 
 const getById = async (req, res) => {
@@ -43,10 +43,22 @@ const deleteProduct = async (req, res) => {
   return res.status(204).end();
 };
 
+const getByQuery = async (req, res) => {
+  const { q } = req.query;
+  let { message } = await productsService.getAll();
+
+  if (q) {
+    message = message.filter((prdct) => prdct.name.toLowerCase().includes(q.toLowerCase()));
+  }
+
+  return res.status(200).json(message);
+};
+
 module.exports = {
   getAll,
   getById,
   insertProduct,
   updateProduct,
   deleteProduct,
+  getByQuery,
 };

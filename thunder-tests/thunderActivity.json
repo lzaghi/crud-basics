@@ -37,13 +37,19 @@
     "colId": "history",
     "containerId": "",
     "name": "http://localhost:3000/products/",
-    "url": "http://localhost:3000/products/",
+    "url": "http://localhost:3000/products/search?q=",
     "method": "GET",
     "sortNum": 0,
     "created": "2023-02-13T19:04:49.658Z",
-    "modified": "2023-02-13T19:04:49.658Z",
+    "modified": "2023-02-15T14:53:47.530Z",
     "headers": [],
-    "params": [],
+    "params": [
+      {
+        "name": "q",
+        "value": "",
+        "isPath": false
+      }
+    ],
     "tests": []
   },
   {
