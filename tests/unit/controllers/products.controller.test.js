@@ -142,6 +142,23 @@ describe('Testes de unidade productsController', function () {
     });
   });
 
+  it('Deleção válida de produto retorna 204', async function () {
+    const res = {};
+    const req = {
+      params: { id: 1},
+    }
+
+    res.status = sinon.stub().returns(res);
+    res.end = sinon.stub().returns();
+    
+    sinon
+      .stub(productsService, 'deleteProduct')
+      .resolves({ type: null, message : { id: 1, ...newProductMock }})
+    await productsController.deleteProduct(req, res);
+
+    expect(res.status).to.have.been.calledWith(204);
+  });
+
   afterEach(function () {
     sinon.restore();
   });

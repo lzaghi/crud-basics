@@ -86,6 +86,42 @@ describe('Testes de unidade productsService', function () {
     });
   });
 
+  it('Atualização inválida de produto por nome retorna erro', async function () {
+    const result = await productsService.updateProduct({
+      "name": "Mar"
+    })
+
+    expect(result.type).to.equal('INVALID_VALUE');
+    expect(result.message).to.equal('"name" length must be at least 5 characters long');
+  });
+
+  it('Atualização inválida de produto por id retorna erro', async function () {
+    const result = await productsService.updateProduct(newProduct, 999)
+
+    expect(result.type).to.equal('PRODUCT_NOT_FOUND');
+    expect(result.message).to.equal('Product not found');
+  });
+
+  it('Deleção válida de produto retorna o produto deletado', async function () {
+    sinon.stub(productsModel, 'deleteProduct').resolves(undefined);
+    sinon.stub(productsModel, 'getById').resolves(productsList[1]);
+
+    const result = await productsService.deleteProduct(2);
+
+    expect(result.type).to.equal(null);
+    expect(result.message).to.deep.equal({
+      "id": 2,
+      "name": "Traje de encolhimento"
+    });
+  });
+
+  it('Deleção inválida de produto retorna erro', async function () {
+    const result = await productsService.deleteProduct(999)
+
+    expect(result.type).to.equal('PRODUCT_NOT_FOUND');
+    expect(result.message).to.equal('Product not found');
+  });
+
   afterEach(function () {
     sinon.restore();
   });
