@@ -38,7 +38,7 @@ Para rodar esta aplicação é necessário ter o Docker e o Docker Compose (v1.2
   npm run seed
 ```
 Essa etapa também pode ser feita diretamente a partir de um cliente MySQL de sua preferência, como o MySQL Workbench.
-Conecte-se na porta ```3006``` com as credenciais de user ```root``` e senha ```password```, e execute os scrips nos arquivos ```migration.sql``` e ```seed.sql```.
+Conecte-se na porta ```3006``` com as credenciais de user ```root``` e senha ```password```, e execute os scripts que estão nos arquivos ```migration.sql``` e ```seed.sql```.
 
 6. Inicie a aplicação
 ```bash
@@ -56,7 +56,7 @@ Para rodar os testes
 A documentação completa da API pode ser consultada na rota ```http://localhost:3000/swagger```
 ![](swagger-store.png)
 
-Segue um resumo do que é documentado na rota acima:
+Segue um resumo do que é documentado na rota citada acima:
 <details>
 <summary><strong>Especificações das requisições</strong></summary>
 
