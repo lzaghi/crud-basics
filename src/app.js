@@ -5,7 +5,7 @@ const swaggerDocument = require('./swagger/swagger.json');
 const { productsRouter, salesRouter } = require('./routers');
 
 const app = express();
-
+app.disable('x-powered-by');
 app.use(express.json());
 
 app.use('/swagger', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
