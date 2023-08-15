@@ -264,7 +264,7 @@
                 },
                 "name": {
                   "type": "string",
-                  "example": "Escudo do Lanterna Verde"
+                  "example": "ProdutoX"
                 }
               },
               "xml": {
