@@ -53,7 +53,7 @@ Para rodar os testes
 
 ## Documentação
 
-A documentação completa da API pode ser consultada na rota ```http://localhost:3000/swagger```
+A documentação completa da API pode ser consultada na rota ```http://localhost:3000/swagger```, após a aplicação estar rodando.
 ![](swagger-store.png)
 
 Segue um resumo do que é documentado na rota citada acima:
